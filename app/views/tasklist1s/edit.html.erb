@@ -1,6 +1,21 @@
 <h1>id:<%=@tasklist1.id%>の編集ページ</h1>
 
-<%=form_with(model:@tasklist1,local:true)do |f|%>
+<%=form_with(model: @tasklist1,local:true)do |f|%>
+
+<% if @tasklist1.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% @tasklist1.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<%=f.label:status,"status"%>
+  <%=f.text_field:status %>
+
   <%=f.label:content,"メッセージ"%>
   <%=f.text_field:content %>
   

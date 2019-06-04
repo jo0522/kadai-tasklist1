@@ -48,7 +48,7 @@ class Tasklist1sController < ApplicationController
 
 private
 def tasklist1_params
-params.require(:tasklist1).permit(:content)
+params.require(:tasklist1).permit(:content,:status)
 end
 
 end
